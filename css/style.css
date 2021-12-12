@@ -1,0 +1,21 @@
+.chess-desk{
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.chess-box{
+  width: 75px;
+  height: 75px;
+  background: #A67D5B;
+}
+.white{
+  background-color: #E2CCAA;
+}
+
+.red{
+  background-color: red;
+}

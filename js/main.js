@@ -16,7 +16,6 @@ for(let i=1;i<=8;i++){
       }
 
     }else{
-
       if(n % 2 == 0){
         elChessDesk.innerHTML += (`
           <div class="chess-box" id="${i}-${n}"></div>
@@ -31,35 +30,39 @@ for(let i=1;i<=8;i++){
     }
   }
 }
-document.querySelector(".fil").addEventListener("click" , () => { clicked("fil") });
-document.querySelector(".tora").addEventListener("click" , () => { clicked("tora") });
-document.querySelector(".ferz").addEventListener("click" , () => { clicked("ferz") });
-function clicked(value){
+document.querySelector(".eleph").addEventListener("click" , () => { clicked("eleph",`<i class="fas fa-chess-king-alt"></i>`) });
+document.querySelector(".rook").addEventListener("click" , () => { clicked("rook",`<i class="fas fa-chess-rook-alt"></i>`) });
+document.querySelector(".queen").addEventListener("click" , () => { clicked("queen",`<i class="fas fa-chess-queen"></i>`) });
+function clicked(value,icon){
   elChessDesk.addEventListener('click',(e)=>{
     let allItem = document.querySelectorAll(".chess-box");
     let allClass = [];
     for(let item of allItem){
       item.style = "";
+      item.innerHTML = "";
       allClass.push(item.id); 
     }
     let cordination = e.srcElement.attributes.id.value;
     let x = cordination.slice(0,1);
     let y = cordination.slice(-1);
-    // fil
-    if(value == "fil"){
-      fil();
+    
+    document.getElementById(`${cordination}`).innerHTML = icon;
+
+    // eleph
+    if(value == "eleph"){
+      eleph();
     }
-    // tora
-    else if(value == "tora"){
-      tora();
+    // rook
+    else if(value == "rook"){
+      rook();
     }
-    // ferz
-    else if(value == "ferz"){
-      fil();
-      tora();
+    // queen
+    else if(value == "queen"){
+      eleph();
+      rook();
     }
     // functions
-    function tora(){
+    function rook(){
       for(let i=x+1, n=x+1; i<=8, n>=1; i++ ,n--){
         for(let item of allClass){
           if(item == `${i}-${y}`){
@@ -81,7 +84,7 @@ function clicked(value){
         }
       }
     }
-    function fil(){
+    function eleph(){
       for(let i=x, n=y; i<=8, n<=8; i++ ,n++){
         for(let item of allClass){
           if(item == `${i}-${n}`){

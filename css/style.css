@@ -1,5 +1,6 @@
 body{
   background-color: #222;
+  display: flex;
 }
 .chess-desk{
   width: 620px;
@@ -15,6 +16,11 @@ body{
   height: 75px;
   background: #A67D5B;
   border: 1px solid #e5e5e5;
+  color: #fff;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .white{
   background-color: #E2CCAA;
@@ -22,4 +28,15 @@ body{
 
 .red{
   background-color: red;
+}
+
+button{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 45px;
+  background-color: transparent;
+  border: 1px solid transparent;
 }
